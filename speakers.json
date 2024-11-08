@@ -1,0 +1,45 @@
+[
+    {
+      "name": "John Doe",
+      "role": "Chief Marketing Officer",
+      "company": "Acme Corp",
+      "image": "images/speaker1.jpg",
+      "bio": "John Doe is the Chief Marketing Officer at Acme Corp with over 15 years of experience in strategic marketing and brand management."
+    },
+    {
+      "name": "John Doe",
+      "role": "Chief Engagement Officer",
+      "company": "Acquia",
+      "image": "images/speaker2.jpg",
+      "bio": "John Doe has been instrumental in driving engagement strategies at Acquia, focusing on innovative solutions for customer growth."
+    },
+    {
+      "name": "John Doe",
+      "role": "Chief Technical Developer",
+      "company": "Pantheon",
+      "image": "images/speaker3.jpg",
+      "bio": "With a deep technical background, John Doe leads the development efforts at Pantheon, spearheading several groundbreaking projects."
+    },
+    {
+        "name": "Hilary claude",
+        "role": "Chief Marketing Officer",
+        "company": "Specbee",
+        "image": "images/speaker4.jpg",
+        "bio": "With a deep technical background, John Doe leads the development efforts at Pantheon, spearheading several groundbreaking projects."
+      },
+      {
+        "name": "Hilary claude",
+        "role": "Chief Marketing Officer",
+        "company": "Specbee",
+        "image": "images/speaker4.jpg",
+        "bio": "With a deep technical background, John Doe leads the development efforts at Pantheon, spearheading several groundbreaking projects."
+      },
+      {
+        "name": "John Doe",
+        "role": "Chief Technical Developer",
+        "company": "Pantheon",
+        "image": "images/speaker3.jpg",
+        "bio": "With a deep technical background, John Doe leads the development efforts at Pantheon, spearheading several groundbreaking projects."
+      }
+  ]
+  

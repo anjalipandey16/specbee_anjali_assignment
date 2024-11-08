@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Featured Speakers</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="speakers-section">
+      <h2>View our Featured Speakers for the Event</h2>
+      <p class="description">
+        Speakers are core contributors and industry thought leaders working at
+        companies that push for innovation.
+      </p>
+
+      <div class="speaker-detail">
+        <div class="speaker-detail-content">
+          <!-- First div: Speaker Photo -->
+          <div class="speaker-photo">
+            <img class="speaker-detail-img" src="" alt="Speaker Image" />
+          </div>
+
+          <!-- Second div: Speaker Details (name, role, company) -->
+          <div class="speaker-info">
+            <h3 class="speaker-name"></h3>
+            <p class="speaker-role"></p>
+            <p class="speaker-company"></p>
+            <div class="logos">
+              <img src="images/logo1.png" alt="Logo 1" class="logo" />
+              <img src="images/logo2.png" alt="Logo 2" class="logo" />
+              <img src="images/logo3.png" alt="Logo 3" class="logo" />
+            </div>
+          </div>
+          
+
+          <!-- Third div: Separator Line -->
+          <div class="separator-line"></div>
+
+          <!-- Fourth div: Speaker Bio -->
+          <div class="speaker-bio-container">
+            <p class="speaker-bio"></p>
+          </div>
+          <button class="close-detail">X</button>
+
+        </div>
+      </div>
+
+      <div class="carousel">
+        <button class="nav-arrow left-arrow">&#10094;</button>
+        <div class="carousel-track-container">
+          <ul class="carousel-track">
+            <li class="carousel-slide">
+              <div class="speaker-card">
+                <img src="images\speaker1.jpg" alt="Speaker 1" />
+                <h3>John Doe</h3>
+                <p class="role">Chief Marketing Officer</p>
+                <p class="company">Acme Corp</p>
+              </div>
+            </li>
+            <li class="carousel-slide">
+              <div class="speaker-card">
+                <img src="images\speaker2.jpg" alt="Speaker 2" />
+                <h3>John Doe</h3>
+                <p class="role">Chief Engagement Officer</p>
+                <p class="company">Acquia</p>
+              </div>
+            </li>
+            <li class="carousel-slide">
+              <div class="speaker-card">
+                <img src="images\speaker3.jpg" alt="Speaker 3" />
+                <h3>John Doe</h3>
+                <p class="role">Chief Technical Developer</p>
+                <p class="company">Pantheon</p>
+              </div>
+            </li>
+            <li class="carousel-slide">
+              <div class="speaker-card">
+                <img src="images\speaker4.jpg" alt="Speaker 4" />
+                <h3>Jeane claude</h3>
+                <p class="role">Chief Marketing Officer</p>
+                <p class="company">Specbee</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <button class="nav-arrow right-arrow">&#10095;</button>
+      </div>
+      <div class="program-container">
+        <div class="program-button-container">
+          <button class="program-button">See the Program</button>
+        </div>
+        <div class="instruction-container">
+          <p class="click-instruction">
+            Click here to see <br />
+            the full program
+          </p>
+        </div>
+        <img src="images/arrow.jpg" class="arrow-img" alt="point">
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

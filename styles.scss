@@ -1,0 +1,507 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .speakers-section {
+    text-align: center;
+    max-width: 800px;
+    margin: 20px;
+    width: 1200px;
+    height: 321px;
+  
+    h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+  
+    .description {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 30px;
+    }
+  
+    .carousel {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      position: relative;
+  
+      .carousel-track-container {
+        overflow: hidden;
+        width: 100%;
+      }
+  
+      .carousel-track {
+        display: flex;
+        overflow: hidden;
+        width: 100%;
+        list-style: none; /* Remove dots */
+        padding: 0;
+        margin: 0;
+      }
+  
+      .carousel-slide {
+        flex: 0 0 auto;
+        transition: transform 0.5s ease;
+        width: 25%;
+        min-width: 150px;
+        padding: 10px;
+  
+        .speaker-card {
+          background-color: #fff;
+          padding: 15px;
+          border-radius: 8px;
+          box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+          text-align: center;
+          width: 185px;
+          height: 220px;
+  
+          img {
+            width: 120px;
+            height: 120px;
+            border-radius: 100%;
+            margin-bottom: 10px;
+          }
+  
+          h3 {
+            font-size: 16px;
+            color: #333;
+          }
+  
+          .role {
+            font-size: 12px;
+            color: #333;
+            margin-top: 12px;
+            font-weight: bold;
+          }
+  
+          .company {
+            font-size: 12px;
+            color: #aaa;
+            margin-top: 2px;
+          }
+        }
+      }
+  
+      .nav-arrow {
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        color: #333;
+  
+        &.left-arrow {
+          position: absolute;
+          left: -30px;
+        }
+  
+        &.right-arrow {
+          position: absolute;
+          right: -30px;
+        }
+      }
+    }
+  
+    .program-container {
+      display: flex;
+      flex-direction: column; /* Stack the elements vertically */
+      align-items: center; /* Center the content horizontally */
+    }
+  
+    .program-button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px; /* Space between the button and instruction */
+    }
+  
+    .program-button {
+      background-color: #0056b3;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 408px;
+      height: 58px;
+      text-align: center;
+      margin: 0;
+      font-weight: 500;
+  
+      &:hover {
+        background-color: #003d7a;
+      }
+    }
+  
+    .instruction-container {
+      margin-right: 600px;
+    }
+  
+    .click-instruction {
+      font-size: 12px;
+      color: #333;
+    }
+  }
+  
+  .speaker-detail {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: none; /* Initially hidden */
+    margin-bottom: 20px;
+    color: #333;
+    transition: opacity 2s ease-in-out, margin-top 2s ease-in-out;
+    position: relative;
+  }
+  
+  .speaker-detail-content {
+    display: flex;
+    align-items: center; /* Aligns all items vertically centered */
+  }
+  
+  .speaker-photo {
+    flex: 0 0 80px; /* Fixed width for the photo */
+    margin-right: 20px; /* Space between photo and details */
+  }
+  
+  .speaker-detail-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Circular image */
+  }
+  
+  .speaker-info {
+    flex-grow: 0.5;
+    text-align: left; /* Left-align the text */
+    width: 50px;
+  }
+  
+  .speaker-name {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .speaker-role{
+    font-size: 12px;
+    color: #333;
+    margin-top: 12px;
+    font-weight: bold;
+  }
+  .speaker-company {
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  
+  .logos {
+    display: flex;
+    gap: 10px; /* Space between the logos */
+    margin-top: 10px;
+  }
+  
+  .logo {
+    width: 30px; /* Size of the logos */
+    height: 30px;
+    object-fit: contain; /* Ensures the logos retain aspect ratio */
+  }
+  
+  .separator-line {
+    width: 1px;
+    background-color: #666;
+    height: 60px;
+    text-align: left;
+  }
+  
+  .speaker-bio-container {
+    width: 400px; /* Set a fixed width, adjust as needed */
+    text-align: justify;
+    overflow-wrap: break-word; /* Ensures long words fit within the container */
+    padding: 10px; /* Optional: Adds padding for better readability */
+  }
+  
+  .speaker-bio {
+    line-height: 1.6; /* Adjusts line spacing for readability */
+    margin: 0; /* Removes default margin */
+  }
+  
+  .close-detail {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #fff; // Optional: background color for better visibility
+    border: none;
+    font-size: 0.75rem;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); // Optional: adds a subtle shadow for visibility
+    transition: background-color 0.3s;
+  
+    &:hover {
+      background-color: #f0f0f0; // Light gray on hover
+    }
+  }
+  
+  .arrow-img {
+    width: 150px;
+    height: 50px;
+    margin-right: 400px;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) { /* Tablet devices */
+    .speakers-section {
+      width: 100%;
+      height: auto;
+      margin: 10px;
+    }
+  
+    .carousel-slide {
+      width: 50%; /* Make each slide smaller */
+      min-width: 120px; /* Reduce minimum width */
+    }
+  
+    .speaker-card {
+      width: 160px;
+      height: 200px;
+    }
+  
+    .program-button {
+      width: 90%; /* Make button more responsive */
+      font-size: 14px;
+      padding: 8px 16px;
+    }
+  
+    .speaker-detail-content {
+      flex-direction: column; /* Stack content vertically on smaller screens */
+      align-items: flex-start;
+    }
+  
+    .speaker-photo {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  
+    .speaker-info {
+      width: auto;
+    }
+  
+    .speaker-name {
+      font-size: 18px;
+    }
+  
+    .speaker-role{
+        font-weight: bold;
+    }
+    .speaker-company {
+      font-size: 12px;
+    }
+  
+    .speaker-bio-container {
+      width: 100%;
+      padding: 8px;
+    }
+  
+    .speaker-bio {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 450px) { /* Mobile devices */
+    .speakers-section {
+      width: 100%;
+      height: auto;
+      margin: 1px; /* Reduced margin for tight layout */
+    }
+
+    .carousel {
+      display: flex;
+      flex-direction: row; /* Align cards horizontally */
+      align-items: center;
+      justify-content: center; /* Center align the cards */
+      overflow: hidden; /* Hide overflowed content */
+      position: relative;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease; /* Smooth transition for sliding */
+    }
+
+    .carousel-slide {
+      width: 100%; /* Full width for one card */
+      height: auto;
+      margin: 5px; /* Small margin between cards */
+      display: inline-block;
+    }
+
+    /* Speaker card adjustments */
+    .speaker-card {
+      width: 100%; /* Full width for each card */
+      height: 80px; /* Adjusted height for better fit */
+      padding: 5px;
+      font-size: 6px; /* Smaller font size for the cards */
+    }
+
+    .speaker-photo {
+      width: 30px; /* Smaller image size */
+      height: 30px;
+      margin-bottom: 5px; /* Smaller margin */
+    }
+
+    .program-button {
+      width: 80%; /* Adjusted button width for mobile */
+      font-size: 6px; /* Smaller font size */
+      padding: 4px 8px; /* Reduced padding */
+    }
+
+    /* Speaker detail content adjustments */
+    .speaker-detail-content {
+      flex-direction: column; /* Stack speaker details vertically */
+      align-items: flex-start;
+    }
+
+    .speaker-photo {
+      margin-right: 0;
+      margin-bottom: 5px; /* Smaller margin between image and text */
+    }
+
+    .speaker-info {
+      width: auto;
+    }
+
+    .speaker-name {
+      font-size: 10px; /* Adjusted smaller font size */
+    }
+
+    .speaker-role{
+        font-weight: bold;
+    }
+
+    .speaker-company {
+      font-size: 8px; /* Adjusted smaller font size */
+    }
+
+    .speaker-bio-container {
+      width: 100%;
+      padding: 4px; /* Reduced padding for bio */
+    }
+
+    .speaker-bio {
+      font-size: 8px; /* Adjusted smaller font size */
+    }
+
+    /* Speaker details div adjustments to make it shorter */
+    .speaker-detail {
+      width: 100%;
+      padding: 8px;
+      font-size: 10px; /* Smaller font size for details */
+      height: auto; /* Remove any height restriction */
+      max-height: 250px; /* Limit the height to make the detail section more compact */
+      overflow-y: auto; /* Allow scrolling if content exceeds max height */
+    }
+
+    .speaker-detail-img {
+      width: 40px; /* Adjusted image size */
+      height: 40px;
+    }
+
+    /* Logos adjustments */
+    .logo {
+      width: 12px; /* Adjusted logo size */
+      height: 12px;
+      padding:0;
+      margin:0;
+    }
+
+    .separator-line {
+      height: 8px; /* Adjusted separator line height */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Switch to vertical carousel on small screens */
+    .carousel {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin: 0;
+    }
+  
+    .carousel-track {
+      flex-direction: column;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+  
+    .carousel-slide {
+      width: 80%;
+      min-width: 100%;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: center;
+    }
+  
+    .nav-arrow {
+      font-size: 20px;
+      &.left-arrow,
+      &.right-arrow {
+        display: none; /* Hide the arrow images on small screens */
+      }
+    }
+  
+    .program-button {
+      width: 250px;
+      height: 40px;
+      font-size: 10px;
+      margin: 10px auto;
+      display: block;
+    }
+  
+    .speaker-card {
+      width: 100%;
+      height: 200px;
+      text-align: center;
+      margin: 0 auto;  /* Centering speaker card */
+    }
+  
+    .speaker-photo {
+      flex: 0 0 80px;
+      margin-right: 20px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    .speaker-name {
+      font-size: 14px;
+    }
+
+    .speaker-detail-img{
+        height:100px;
+        width:100px;
+
+    }
+    /* Make .click-instruction smaller and position it below the program button */
+    .click-instruction {
+      font-size: 12px;  /* Smaller text */
+      text-align: center;
+      margin-top: 10px;  /* Space it below the button */
+      width: 80%;  /* Adjust width for small screens */
+      margin: 10px auto;
+    }
+  }
+  
